@@ -26,7 +26,7 @@ export function SiteHeader({simple=false,eventPage=false}:{simple?:boolean;event
    <Button variant="ghost" className="account-trigger" aria-expanded={open} onClick={()=>setOpen(v=>!v)}>MY ACCOUNT <ChevronDown/></Button>
     {open&&<div className="account-dropdown" role="menu">{items.map((item,i)=><button role="menuitem" key={item.label} className={i===0?"highlight":""} onClick={()=>go(item.to,item.protected)}>{item.label}</button>)}{loggedIn?<button role="menuitem" className="account-session-action" onClick={()=>{logout();setOpen(false);navigate({to:"/login"})}}>LOG OUT</button>:<button role="menuitem" className="account-session-action" onClick={()=>go("/login")}>LOG IN</button>}</div>}
   </div>}
-  {!eventPage&&<Button variant="ghost" className="global-menu" aria-label="Open navigation" onClick={()=>setMobile(true)}><Menu/></Button>}
+  <Button variant="ghost" className="global-menu" aria-label="Open navigation" aria-expanded={mobile} onClick={()=>setMobile(true)}><Menu/></Button>
   {mobile&&<div className="global-drawer"><div><img src={logo} alt="Quicket"/><Button variant="ghost" aria-label="Close navigation" onClick={()=>setMobile(false)}><X/></Button></div>{items.map(item=><button key={item.label} onClick={()=>go(item.to,item.protected)}>{item.label}</button>)}<button onClick={()=>{if(loggedIn)logout();else go("/login");setMobile(false)}}>{loggedIn?"LOG OUT":"LOG IN"}</button></div>}
  </header>
 }
