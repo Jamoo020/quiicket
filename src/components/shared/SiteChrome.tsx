@@ -1,6 +1,6 @@
 import { useEffect, useRef, useState, type ReactNode } from "react";
 import { Link, useNavigate } from "@tanstack/react-router";
-import { ChevronDown, Menu, X } from "lucide-react";
+import { ChevronDown, Linkedin, Menu, Music2, X } from "lucide-react";
 import logo from "../../assets/quicket-logo.svg";
 import { Button } from "../ui/QuicketButton";
 import { useAppState } from "./AppState";
@@ -27,7 +27,7 @@ export function SiteHeader({simple=false,eventPage=false}:{simple?:boolean;event
     {open&&<div className="account-dropdown" role="menu">{items.map((item,i)=><button role="menuitem" key={item.label} className={i===0?"highlight":""} onClick={()=>go(item.to,item.protected)}>{item.label}</button>)}{loggedIn?<button role="menuitem" className="account-session-action" onClick={()=>{logout();setOpen(false);navigate({to:"/login"})}}>LOG OUT</button>:<button role="menuitem" className="account-session-action" onClick={()=>go("/login")}>LOG IN</button>}</div>}
   </div>}
   <Button variant="ghost" className="global-menu" aria-label="Open navigation" aria-expanded={mobile} onClick={()=>setMobile(true)}><Menu/></Button>
-  {mobile&&<div className="global-drawer"><div><img src={logo} alt="Quicket"/><Button variant="ghost" aria-label="Close navigation" onClick={()=>setMobile(false)}><X/></Button></div>{items.map(item=><button key={item.label} onClick={()=>go(item.to,item.protected)}>{item.label}</button>)}<button onClick={()=>{if(loggedIn)logout();else go("/login");setMobile(false)}}>{loggedIn?"LOG OUT":"LOG IN"}</button></div>}
+  {mobile&&<div className="global-drawer"><div className="global-drawer-head"><img src={logo} alt="Quicket"/></div><nav>{items.filter(item=>item.label!=="MY TICKETS").map(item=><button key={item.label} onClick={()=>go(item.to,item.protected)}>{item.label}</button>)}</nav><div className="drawer-social"><p>Follow Us</p><div><a aria-label="Quicket on LinkedIn" href="https://www.linkedin.com/company/2350818"><Linkedin/></a><a aria-label="Quicket on TikTok" href="https://www.tiktok.com/@quicket_za"><Music2/></a><a aria-label="Quicket on X" href="https://twitter.com/QuicketSA"><X/></a></div></div><button className="drawer-login" onClick={()=>{if(loggedIn)logout();else go("/login");setMobile(false)}}>{loggedIn?"LOG OUT":"LOG IN"}</button></div>}
  </header>
 }
 
