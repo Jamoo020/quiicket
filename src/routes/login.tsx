@@ -1,0 +1,4 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { z } from "zod";
+import { LoginPage } from "../components/pages/AppPages";
+export const Route=createFileRoute("/login")({validateSearch:z.object({redirect:z.string().optional()}).catch({}),head:()=>({meta:[{title:"Log in to Quicket"},{name:"description",content:"Log in to access your Quicket demo account."},{property:"og:title",content:"Log in to Quicket"},{property:"og:description",content:"Access your tickets and event tools."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary"}]}),component:LoginPage});

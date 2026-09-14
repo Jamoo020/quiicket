@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { HelpArticlePage } from "../components/pages/AppPages";
+export const Route=createFileRoute("/help/articles/$articleSlug")({head:()=>({meta:[{title:"Help Article — Quicket"},{name:"description",content:"Quicket ticket buyer help article."},{property:"og:title",content:"Help Article — Quicket"},{property:"og:description",content:"Guidance for managing event tickets."},{property:"og:type",content:"article"},{name:"twitter:card",content:"summary"}]}),component:()=>{const {articleSlug}=Route.useParams();return <HelpArticlePage slug={articleSlug}/>}});

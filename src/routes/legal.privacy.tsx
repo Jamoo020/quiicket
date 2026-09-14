@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SimpleContentPage } from "../components/pages/AppPages";
+export const Route=createFileRoute("/legal/privacy")({head:()=>({meta:[{title:"Privacy Policy — Quicket"},{name:"description",content:"Privacy information for this reconstructed Quicket demo."},{property:"og:title",content:"Privacy Policy — Quicket"},{property:"og:description",content:"Privacy information for this demo."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary"}]}),component:()=> <SimpleContentPage title="Privacy Policy" text="This local demonstration stores only temporary browser preferences for login and saved-event states."/>});

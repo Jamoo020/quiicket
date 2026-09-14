@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SimpleContentPage } from "../components/pages/AppPages";
+export const Route=createFileRoute("/legal/terms")({head:()=>({meta:[{title:"Terms — Quicket"},{name:"description",content:"Demo terms for this reconstructed Quicket experience."},{property:"og:title",content:"Terms — Quicket"},{property:"og:description",content:"Demo terms and conditions."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary"}]}),component:()=> <SimpleContentPage title="Terms & Conditions" text="These demo terms describe the local reconstructed experience. No real ticket purchase or event publication occurs."/>});

@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SimpleContentPage } from "../components/pages/AppPages";
+export const Route=createFileRoute("/about")({head:()=>({meta:[{title:"About Quicket"},{name:"description",content:"About this reconstructed Quicket experience."},{property:"og:title",content:"About Quicket"},{property:"og:description",content:"About the ticketing experience."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary"}]}),component:()=> <SimpleContentPage title="About Quicket" text="A focused ticketing experience for discovering events, managing tickets, and creating new listings."/>});

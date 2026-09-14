@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { SavedEventsPage } from "../components/pages/AppPages";
+export const Route=createFileRoute("/account/my-saved-events")({head:()=>({meta:[{title:"Saved Events — Quicket"},{name:"description",content:"View events saved to your Quicket demo account."},{property:"og:title",content:"Saved Events — Quicket"},{property:"og:description",content:"Your saved events in one place."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary"}]}),component:SavedEventsPage});

@@ -1,0 +1,4 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { DiscoveryPage } from "../components/pages/AppPages";
+import { z } from "zod";
+export const Route=createFileRoute("/events/kenya")({validateSearch:z.object({query:z.string().optional()}).catch({}),head:()=>({meta:[{title:"Events in Kenya — Quicket"},{name:"description",content:"Find and book upcoming events across Kenya."},{property:"og:title",content:"Events in Kenya — Quicket"},{property:"og:description",content:"Find and book upcoming events across Kenya."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary_large_image"}]}),component:DiscoveryPage});

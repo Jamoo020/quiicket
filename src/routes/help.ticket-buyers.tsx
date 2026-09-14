@@ -1,0 +1,4 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { z } from "zod";
+import { HelpLanding } from "../components/pages/AppPages";
+export const Route=createFileRoute("/help/ticket-buyers")({validateSearch:z.object({category:z.string().optional()}).catch({}),head:()=>({meta:[{title:"Ticket Buyer Help — Quicket"},{name:"description",content:"Help with ordering and managing Quicket tickets."},{property:"og:title",content:"Ticket Buyer Help — Quicket"},{property:"og:description",content:"Help with ordering tickets, ticket management, and event information."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary"}]}),component:HelpLanding});

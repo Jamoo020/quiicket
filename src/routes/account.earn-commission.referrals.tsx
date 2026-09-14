@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { ReferralsPage } from "../components/pages/AppPages";
+export const Route=createFileRoute("/account/earn-commission/referrals")({head:()=>({meta:[{title:"Earn Commission — Quicket"},{name:"description",content:"View demo referral links and commissions."},{property:"og:title",content:"Earn Commission — Quicket"},{property:"og:description",content:"Share event referrals and track commissions."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary"}]}),component:ReferralsPage});

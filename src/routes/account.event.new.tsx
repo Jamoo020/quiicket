@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { CreateEventPage } from "../components/pages/AppPages";
+export const Route=createFileRoute("/account/event/new")({head:()=>({meta:[{title:"Create Event — Quicket"},{name:"description",content:"Create a demo event on Quicket."},{property:"og:title",content:"Create Event — Quicket"},{property:"og:description",content:"Set up event details and tickets."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary"}]}),component:CreateEventPage});

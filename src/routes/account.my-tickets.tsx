@@ -1,0 +1,3 @@
+import { createFileRoute } from "@tanstack/react-router";
+import { MyTicketsPage } from "../components/pages/AppPages";
+export const Route=createFileRoute("/account/my-tickets")({head:()=>({meta:[{title:"My Tickets — Quicket"},{name:"description",content:"View your Quicket demo tickets."},{property:"og:title",content:"My Tickets — Quicket"},{property:"og:description",content:"View your event tickets and order details."},{property:"og:type",content:"website"},{name:"twitter:card",content:"summary"}]}),component:MyTicketsPage});
